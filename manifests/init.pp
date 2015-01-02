@@ -40,6 +40,9 @@ class timezone
             class { 'timezone::config::linux':  timezone => $timezone }
             class { 'timezone::config::redhat': timezone => $timezone }
         }
+        /^(FreeBSD)$/: {
+            class { 'timezone::config::freebsd':  timezone => $timezone }
+        }
         default: {
             fail("Unsupported operating system: ${::osfamily}")
         }
