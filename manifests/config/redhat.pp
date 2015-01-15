@@ -10,7 +10,7 @@ class timezone::config::redhat
 {
     augeas { 'timezone-clock':
         context => '/files/etc/sysconfig/clock',
-        changes => "set ZONE $timezone'",
+        changes => "set ZONE $timezone",
         lens => 'Shellvars.lns',
         incl => '/etc/sysconfig/clock',
     }
