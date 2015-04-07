@@ -12,10 +12,11 @@ class timezone::config::linux
 
     file { 'timezone-localtime':
         name  => '/etc/localtime',
-        ensure => link,
+        ensure => present,
+        source => "/usr/share/zoneinfo/${timezone}",
+        links => follow,
         owner => root,
         group => "${::os::params::admingroup}",
         mode  => 644,
-        target => "/usr/share/zoneinfo/${timezone}",
     }
 }
