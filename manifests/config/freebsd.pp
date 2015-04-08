@@ -6,7 +6,8 @@
 class timezone::config::freebsd
 (
     $timezone
-)
+
+) inherits timezone::params
 {
 
     # FreeBSD and Linux timezone configuration is identical

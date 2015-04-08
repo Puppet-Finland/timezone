@@ -6,7 +6,8 @@
 class timezone::config::redhat
 (
     $timezone
-)
+
+) inherits timezone::params
 {
     augeas { 'timezone-clock':
         context => '/files/etc/sysconfig/clock',

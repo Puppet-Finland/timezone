@@ -6,10 +6,9 @@
 class timezone::config::debian
 (
     $timezone
-)
-{
-    include os::params
 
+) inherits timezone::params
+{
     file { 'timezone-timezone':
         ensure => present,
         name  => '/etc/timezone',
