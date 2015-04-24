@@ -10,12 +10,12 @@ class timezone::config::linux
 ) inherits timezone::params
 {
     file { 'timezone-localtime':
-        name  => '/etc/localtime',
         ensure => present,
+        name   => '/etc/localtime',
         source => "/usr/share/zoneinfo/${timezone}",
-        links => follow,
-        owner => root,
-        group => $::os::params::admingroup,
-        mode  => $::timezone::params::localtime_mode,
+        links  => follow,
+        owner  => $::os::params::adminuser,
+        group  => $::os::params::admingroup,
+        mode   => $::timezone::params::localtime_mode,
     }
 }

@@ -5,7 +5,7 @@
 #
 class timezone::params {
 
-    include os::params
+    include ::os::params
 
     case $::osfamily {
         'RedHat': {

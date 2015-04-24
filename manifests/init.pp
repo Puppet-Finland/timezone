@@ -33,15 +33,15 @@ class timezone
     # Timezone configuration varies a lot from one OS to another.
     case $::operatingsystem {
         /^(Debian|Ubuntu)$/: {
-            class { 'timezone::config::linux':  timezone => $timezone }
-            class { 'timezone::config::debian': timezone => $timezone }
+            class { '::timezone::config::linux':  timezone => $timezone }
+            class { '::timezone::config::debian': timezone => $timezone }
         }
         /^(RedHat|CentOS)$/: {
-            class { 'timezone::config::linux':  timezone => $timezone }
-            class { 'timezone::config::redhat': timezone => $timezone }
+            class { '::timezone::config::linux':  timezone => $timezone }
+            class { '::timezone::config::redhat': timezone => $timezone }
         }
         /^(FreeBSD)$/: {
-            class { 'timezone::config::freebsd':  timezone => $timezone }
+            class { '::timezone::config::freebsd':  timezone => $timezone }
         }
         default: {
             fail("Unsupported operating system: ${::osfamily}")

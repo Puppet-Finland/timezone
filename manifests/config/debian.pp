@@ -10,11 +10,11 @@ class timezone::config::debian
 ) inherits timezone::params
 {
     file { 'timezone-timezone':
-        ensure => present,
-        name  => '/etc/timezone',
-        owner => root,
-        group => "${::os::params::admingroup}",
-        mode  => 644,
+        ensure  => present,
+        name    => '/etc/timezone',
+        owner   => $::os::params::adminuser,
+        group   => $::os::params::admingroup,
+        mode    => '0644',
         content => "${timezone}\n",
     }
 }

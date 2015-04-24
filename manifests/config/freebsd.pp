@@ -11,7 +11,7 @@ class timezone::config::freebsd
 {
 
     # FreeBSD and Linux timezone configuration is identical
-    class { 'timezone::config::linux':
+    class { '::timezone::config::linux':
         timezone => $timezone,
     }
 }
