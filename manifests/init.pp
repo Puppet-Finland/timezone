@@ -36,7 +36,7 @@ class timezone
             class { '::timezone::config::linux':  timezone => $timezone }
             class { '::timezone::config::debian': timezone => $timezone }
         }
-        /^(RedHat|CentOS)$/: {
+        /^(Fedora|RedHat|CentOS)$/: {
             class { '::timezone::config::linux':  timezone => $timezone }
             class { '::timezone::config::redhat': timezone => $timezone }
         }
@@ -44,7 +44,7 @@ class timezone
             class { '::timezone::config::freebsd':  timezone => $timezone }
         }
         default: {
-            fail("Unsupported operating system: ${::osfamily}")
+            fail("Unsupported operating system: ${::operatingsystem}")
         }
     }
 }

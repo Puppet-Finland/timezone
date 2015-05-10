@@ -18,6 +18,7 @@ This module has been tested on
 * Ubuntu 12.04
 * CentOS 6 and 7
 * FreeBSD 10
+* Fedora 21
 
 This module should be fairly easy to port to any *NIX-like operating system.
 
