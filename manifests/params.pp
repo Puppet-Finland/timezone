@@ -9,13 +9,13 @@ class timezone::params {
 
     case $::osfamily {
         'RedHat': {
-            $localtime_mode = 644
+            $localtime_mode = '0644'
         }
         'Debian': {
-            $localtime_mode = 644
+            $localtime_mode = '0644'
         }
         'FreeBSD': {
-            $localtime_mode = 444
+            $localtime_mode = '0444'
         }
         default: {
             fail("Unsupported OS: ${::osfamily}")
